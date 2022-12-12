@@ -13,12 +13,6 @@ app.use('/api/users',userRoutes)
 app.use('/api/upload',imageRoute)
 const path = require("path");
 
-app.use(express.static(path.join(__dirname,"./client/build")));
-
-app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, './client/build/index.html'));
-});
-
 app.listen(port,(req,res)=>{
     console.log("Server listening on port " + port);
 })
