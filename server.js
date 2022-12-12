@@ -3,6 +3,10 @@ const bodyParser=require('body-parser')
 const dbConfig=require('./config/dbConfig');
 const app=express();
 app.use(bodyParser.json({limit:'5000kb'}))
+const cors = require('cors');
+app.use(cors({
+    origin: '*'
+}));
 
 require("dotenv").config();
 app.use(express.json());
