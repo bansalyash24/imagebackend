@@ -6,7 +6,7 @@ app.use(bodyParser.json({limit:'5000kb'}))
 
 require("dotenv").config();
 app.use(express.json());
-const port=5000;
+const port=process.env.PORT || 5000
 const userRoutes=require('./routes/userRoute');
 const imageRoute=require('./routes/imageRoute');
 app.use('/api/users',userRoutes)
